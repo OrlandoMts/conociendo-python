@@ -48,7 +48,7 @@ def start_game(lives, word):
 
 def main():
 	print("Bienvenido al ahorcado, se generará una palabra aleatoriamente y debes descubrila")
-	lives = 3
+	lives = 7
 	words = ["PC", "PERSONA", "ESCRITORIO", "PELICULA", "CONSOLA", "DANIEL"]
 	word_random = choice(words)
 	return start_game(lives, word_random)
