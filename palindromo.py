@@ -3,6 +3,7 @@ def palindromo(word):
     new_word = new_word.lower()
 
     new_word_reverse = new_word[ : :-1]
+    print(new_word_reverse)
     if new_word_reverse == new_word:
         return True
     else:
