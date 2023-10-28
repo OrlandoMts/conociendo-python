@@ -19,29 +19,39 @@ def find_letter(letter, word):
 	return list_index
 
 def start_game(lives, word):
-	print(f"palabra generada: {word}")
+	# print(f"palabra generada: {word}")
 	hide_word = list("_"*len(word))
+	print(f"La palabra es: {hide_word}")
 	while lives > 0:
 		letter_by_user = input("Ingresa una letra: ").upper()
 		
 		list_index = find_letter(letter_by_user, word)
+		if(len(list_index) == 0):
+			lives -= 1
+			print(f"[X] Ups! Te quedan {lives} vidas\n")
+
 		for index in list_index:
-			print(f"index {index}")
 			hide_word[index - 1] = letter_by_user
 			
 		print(hide_word)
-		
-		
-		lives -= 1
+
+		if "_" not in hide_word:
+			print(f"Felicidades, completaste la palabra y te quedarón {lives} vidas")
+			break
+
+	
+	if lives == 0:
+		return "=== PERDISTE: Se ahorco el monito :/ ==="
+	else:
+		return f"=== GANASTE: Adivinaste la palabra correcta '{word}'"
 
 
 def main():
-	print("Bienveindo al ahorcado, se generará una palabra aleatoriamente y debes descubrila")
-	lives = 2
-	# words = ["PC", "PERSONA", "ESCRITORIO", "ESCRITORIO", "ESCRITORIO"]
-	words = ["ESCRITORIO", "ESCRITORIO"]
+	print("Bienvenido al ahorcado, se generará una palabra aleatoriamente y debes descubrila")
+	lives = 3
+	words = ["PC", "PERSONA", "ESCRITORIO", "PELICULA", "CONSOLA", "DANIEL"]
 	word_random = choice(words)
-	start_game(lives, word_random)
+	return start_game(lives, word_random)
 
 print(main())
 
