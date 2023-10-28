@@ -1,0 +1,6 @@
+print('Hola')
+print('Hola \"Daniel!\" ')
+print('Fila 1\n Fila 2\nFila 3')
+print('\tTexto tabulado')
+print('This in\'t a number')
+print('Puedo imprimir \\ textualmente')
