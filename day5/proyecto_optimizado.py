@@ -40,7 +40,7 @@ def start_game(lives, word):
 			break
 				
 	if lives == 0:
-		return "=== PERDISTE: Se ahorco el monito :/ ==="
+		return f"=== PERDISTE: Se ahorco el monito :/ la palabra correcta era: '{word}' ==="
 	else:
 		return f"=== GANASTE: Adivinaste la palabra correcta '{word}'"
 
