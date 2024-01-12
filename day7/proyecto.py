@@ -22,9 +22,10 @@ class Cliente(Persona):
 			if deposito < 0:
 				raise ValueError('No se puede depositar un valor negativo')
 			self.balance += deposito
-			return f">>> Saldo actual: ${self.balance} "
 		except ValueError as e:
 			print(f"Error: {e}")
+		else:
+			return f">>> Saldo actual: ${self.balance} "	
 	
 	def retirar(self, retiro):
 		try:
